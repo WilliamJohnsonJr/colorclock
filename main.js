@@ -70,4 +70,4 @@ var countUp = function(){
 		}
 };
 
-var clockCounter = window.setInterval(countUp, 300);
+var clockCounter = window.setInterval(countUp, 1000);
