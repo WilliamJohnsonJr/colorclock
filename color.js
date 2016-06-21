@@ -20,27 +20,31 @@ marginShift(".tensSeconds");
 marginShift(".seconds");
 marginShift(".pound");
 
-if (seconds < 2) {
-	document.getElementById("body").style.backgroundColor = "#024542";
-} else if (2 < seconds < 4) {
-	document.getElementById("body").style.backgroundColor = "#024548";
-} else if (4 < seconds < 6) {
-	document.getElementById("body").style.backgroundColor = "#024551";
-} else if (6 < seconds < 8) {
-	document.getElementById("body").style.backgroundColor = "#024542";
-} else if (8 < seconds < 10) {
-	document.getElementById("body").style.backgroundColor = "#024548";
-};
+var bodyObj= document.getElementById("body");
+
+bodyObj.style.backgroundColor = "#024542";
 
 var countUp = function(){
 	if (seconds < 9){
 			seconds = seconds + 1;
 			document.querySelector(".seconds").textContent = seconds;
+			if (seconds == 2) {
+				bodyObj.style.backgroundColor = "#024548";
+			} else if (seconds == 4) {
+				bodyObj.style.backgroundColor = "#024551";
+			} else if (seconds == 6) {
+				bodyObj.style.backgroundColor = "#024542";
+			} else if (seconds == 8) {
+				bodyObj.style.backgroundColor = "#024548";
+			}
 		} else if (tensSeconds < 5) {
 			tensSeconds = tensSeconds + 1;
 			seconds = 0;
 			document.querySelector(".seconds").textContent = seconds;
 			document.querySelector(".tensSeconds").textContent = tensSeconds;
+			if (seconds == 0) {
+				bodyObj.style.backgroundColor = "#024542";
+			}
 		} else if (minutes < 9) {
 			minutes = minutes + 1;
 			tensSeconds = 0;
